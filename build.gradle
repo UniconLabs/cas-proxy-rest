@@ -1,0 +1,22 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'org.example.dk.casproxyrest'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	jcenter()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compile 'org.jasig.cas.client:cas-client-support-springboot:3.6.1'
+}
+
+test {
+	useJUnitPlatform()
+}

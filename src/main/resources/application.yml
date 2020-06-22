@@ -1,0 +1,37 @@
+logging:
+  level:
+    org.jasig.cas: DEBUG
+    org.springframework: WARN
+
+cas:
+  #Required properties
+  server-url-prefix: https://dk.example.org:8143/cas
+  server-login-url: https://dk.example.org:8143/cas/login
+  client-host-url: https://dk.example.org:8444
+
+  #Optional properties
+  #authentication-url-patterns: [/data]
+  validation-url-patterns: [/data]
+
+  #One of CAS3, CAS, or SAML. The default is CAS3 if not explicitly specified
+  validation-type: CAS3
+
+  #gateway: true
+  use-session: false
+  redirect-after-validation: true
+  allowed-proxy-chains: ['https://dk.example.org:8443/proxy']
+  #accept-any-proxy: true
+
+
+#Sample embedded servlet container SSL config and session tracking mode. Change as appropriate for your local deployment environment
+server:
+  port: 8444
+  ssl:
+    enabled: true
+    key-store: /etc/cas/thekeystore
+    key-store-password: changeit
+
+
+
+
+
